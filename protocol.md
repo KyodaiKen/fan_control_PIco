@@ -15,13 +15,12 @@ This document uses C# type declarations to illustrate datatypes.
 You send: `0xAA`
 
 You receive:  
-* array of `short` of all temp values (deg C times 100 for two decimal places)
-* `0x0D0A` - divider for where the fan sensor values start
-* array of `ushort` of the time passed between revolutions (1 second average)
-* `0x0D0A` - divider for where the matrix return values for each channel starts
-* array of `float` of the matrix return values for each channel
-* `0x0D0A` - divider for where the resulting fan duty cycle array starts
-* array of `byte` of the resulting duty cycle values for each channel (0-100 / `0x00` - `0x64`)
+* `byte` - sensor_count
+* `byte` - channel_count
+* temperature sensor values: `short[sensor_count]` (deg C times 100 for two decimal places)
+* fan sensor9 values: `ushort[channel_count]` (time passed between revolutions, averaged over 1 second in ms * 10 (tenths of a millisecond))
+* matrix return values: `float[channel_count]`
+* resulting fan duty cycles: `byte[channel_count]` (0-100 / `0x00` - `0x64`)
 
 in one stream.
 
