@@ -8,9 +8,7 @@ This document uses C# type declarations to illustrate datatypes.
 | Dev ID / Hello | `0x69` - I  | `0xBAFC01` - the last byte indicates the version between 00 and 255 |
 
 ## Sensors
-There are two sensor types with specific byte ranges to ask for the value.
-
-Temperatures are always reported in Celsius. If you want to use Kelvin or Fahrenheit, you need to use the known equasions to convert the units.
+- Temperatures are always reported in Celsius. If you want to use Kelvin or Fahrenheit, you need to use the known equasions to convert the units.
 
 ### Get all sensors at once
 
